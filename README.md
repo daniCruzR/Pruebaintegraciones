@@ -11,10 +11,19 @@ R// El onboarding con Kushki siempre es destacado, comunican el estado de los pr
 R// La docuementación técnica me pareció clara, gracias a ella pude realizar el punto 1. Tengo un comentario respecto a Kajita, en la documentación explican detalladamente como integrarla pero en el punto 1 de la prueba dice que la tokenización se puede realizar a través de kuskijs o Kajita. Por qué cuando es una suscripción bajo demanda desde kajita no se genera el token pero cuando es una suscripción calendarizada si? este comportamiento está ok?  adjunto evidencia https://codepen.io/danicruzR/pen/ZEMbZKz 
 
 • ¿Qué entiendes por el concepto de tokenización y por qué cree que se recomienda  tokenizar por medio de una solución del frontend?. 
+R// Se tokeniza una tarjeta para reemplazar cierta información del TH,luego de tener este campo se le realiza el cargo al cliente.
+Se recomienda tokenizar por medio de una solución frontend para recolectar información del dispositivo en donde se realiza la transacción.
 
 • Definir que es Autorización, Captura, Reversión, Anulación, Charge. 
+R//
+Autorización: es cuando se le toma cierto valor al TH en su TC para verificar que el cliente cuenta con suficiente crédito antes de procesar la venta.
+Captura: En la captura se hace el cobro efectivo de la autorización y se le hace el débito al TH en su cuenta.
+Reversión: Cuando se excede el tiempo de la anulación del cargo se procede con la reversión. Es un proceso Semi-automatio y en algunos casos se pueden realizar reembolsos parciales.
+Anulación: Es la anulación de un cargo o un cargo diferido existoso. El TH tiene casi 72 hrs para realizar la anulación.
+Cargo: Es cuando se le debita un monto al TH de su cuenta.
 
 • Que entiendes y con qué fin se pueden utilizar llaves de idempotencia. 
+
 
 •¿Qué entiendes por el concepto de Webhook y cuál es su utilidad?
 R// Un Webhook es un llamado que notifica cuando un evento ocurre, se usa para notificar a los usuarios eventos como por ejemplo el cobrro de una suscripción. 

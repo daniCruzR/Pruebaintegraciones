@@ -23,7 +23,12 @@ Anulación: Es la anulación de un cargo o un cargo diferido existoso. El TH tie
 Cargo: Es cuando se le debita un monto al TH de su cuenta.
 
 • Que entiendes y con qué fin se pueden utilizar llaves de idempotencia. 
+Se usa para evitar duplicidad en las transacciones cuando se tiene una intermitencia en el flujo de pagos. Se envía en el header del HTTP, llega al receptor cuando se ejecuta el pago. Por ejemplo si existe una intermitencia y se le descuenta el dinero al usuario y se reintenta la transacción con la misma llave de idempotencia el receptor devuelve un mensaje indicando que ya se ha realizado el débito y no duplica el pago.
 
 
 •¿Qué entiendes por el concepto de Webhook y cuál es su utilidad?
 R// Un Webhook es un llamado que notifica cuando un evento ocurre, se usa para notificar a los usuarios eventos como por ejemplo el cobrro de una suscripción. 
+
+
+
+

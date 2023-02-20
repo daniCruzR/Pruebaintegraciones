@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "bacfb51d-0606-47a2-bb9e-949ac009cd65",
+		"name": "Transfer In",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19932054"
+	},
+	"item": [
+		{
+			"name": "Request transfer in token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Public-Merchant-Id",
+						"value": "470dbc4991d44a07af7cb2099c1e12cd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"amount\": {\n    \"subtotalIva\": 100,\n    \"subtotalIva0\": 0,\n    \"iva\": 0,\n    \"ExtraTaxes\": {\n      \"tasaAeroportuaria\": 0,\n      \"agenciaDeViajes\": 0,\n      \"iac\": 0\n    }\n  },\n  \"callbackUrl\": \"https://kushki.com\",\n  \"userType\": \"1\",\n  \"documentType\": \"DNI\",\n  \"documentNumber\": \"1716458334\",\n  \"paymentDescription\": \"Description of the payment.\",\n  \"email\": \"user@example.com\",\n  \"currency\": \"PEN\"\n}"
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/transfer/v1/tokens",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"transfer",
+						"v1",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "init transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "fe72026863a44173a86d3097da46ad75",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"token\": \"ec9fcb21f8cb491e88b2b5ec2b626973\",\n  \"amount\": {\n    \"subtotalIva\": 100,\n    \"subtotalIva0\": 0,\n    \"iva\": 0,\n    \"ExtraTaxes\": {\n      \"tasaAeroportuaria\": 0,\n      \"agenciaDeViajes\": 0,\n      \"iac\": 0\n    }\n  },\n  \"metadata\": {\n    \"userId\": \"IB344\"\n  }\n}"
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/transfer/v1/init",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"transfer",
+						"v1",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Private-Merchant-Id",
+						"value": "fe72026863a44173a86d3097da46ad75",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/transfer/v1/status/ec9fcb21f8cb491e88b2b5ec2b626973",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"transfer",
+						"v1",
+						"status",
+						"ec9fcb21f8cb491e88b2b5ec2b626973"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

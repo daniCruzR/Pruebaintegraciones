@@ -1,0 +1,43 @@
+<script src="https://cdn.kushkipagos.com/kushki.min.js"></script>
+<form id="form">
+  <label>Número Tarjeta:</label>
+  <input placeholder="Card Number" type="text" id="number"><br><br>
+  <label>Nombre Completo:</label>
+  <input placeholder="Full Name" type="text" id="name"><br><br>
+  <label>Mes de Expiración:</label>
+  <input placeholder="MM" type="text" id="expiry_month"><br><br>
+  <label>Año de Expiración:</label>
+  <input placeholder="YY" type="text" id="expiry_year"><br><br>
+  <label>Código de Seguridad:</label>
+  <input placeholder="CVC" type="password" id="cvc"><br><br>
+
+  <button id="submit">Token de Suscripción</button>
+</form>
+<script>
+  document
+    .getElementById("submit")
+    .addEventListener("click", function(event) {
+      event.preventDefault();
+      const kushki = new Kushki({
+        merchantId: '470dbc4991d44a07af7cb2099c1e12cd', // Your public merchant id 
+        inTestEnvironment: true,
+      });
+      kushki.requestSubscriptionToken({
+        currency: "PEN",
+        card: {
+          name: form.name.value,
+          number: form.number.value,
+          cvc: form.cvc.value,
+          expiryMonth: form.expiry_month.value,
+          expiryYear: form.expiry_year.value,
+        },
+      }, (response) => {
+        if (response.token != null) {
+          console.log(response.token);
+          // Submit your code to your back-end
+        } else {
+          console.error('Error: ', response.error, 'Code: ', response.code, 'Message: ', response.message);
+        }
+      });
+    });
+</script>

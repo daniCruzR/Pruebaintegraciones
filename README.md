@@ -30,5 +30,13 @@ Se usa para evitar duplicidad en las transacciones cuando se tiene una intermite
 R// Un Webhook es un llamado que notifica cuando un evento ocurre, se usa para notificar a los usuarios eventos como por ejemplo el cobrro de una suscripción. 
 
 
-
+5 
+Para este punto se puden usar las colecciones de postman Subscription.postman_collection.json.
+ y transfer Transfer In.postman_collection.json.
+ 
+Los flujos ya se encuentran en la documentación, la cual es pública y puede tener acceso el comercio 
+<img width="928" alt="image" src="https://user-images.githubusercontent.com/125845983/220162833-c114c6f9-80ba-40be-81c4-e4a3aa11738e.png">
+https://docs.kushki.com/pe/one-time-payments/transfer/overview
+<img width="754" alt="image" src="https://user-images.githubusercontent.com/125845983/220162902-3feda400-3b46-4a22-8790-fcfd172a8fcc.png">
+https://docs.kushki.com/co/one-time-payments/card/on-demand
 

@@ -5,7 +5,7 @@ Merchant generado en uat: Integratest  Peru 20000000100140483000
 Respuestas punto 4
 
 • Experiencia de Onboarding con Kushki. Oportunidades de mejoras identificadas. 
-R// El onboarding con Kushki siempre es destacado, comunican el estado de los procesos, regalan feedback para ambas partes mejorar, evaluan tu desempeño cada x periodo de tiempo, se preocupan porque sus colaboradores tengan o desarrolles las habilidades necesarias para el roll. 
+R// El onboarding con Kushki siempre es destacado, comunican el estado de los procesos, regalan feedback para estar en el mejoramiento contunuo, evaluan tu desempeño cada x periodo de tiempo, se preocupan porque sus colaboradores tengan o desarrolles las habilidades necesarias para el roll. 
 
 • Experiencia con la documentación técnica. Oportunidades de mejoras identificadas y propuesta de mejora de esta. 
 R// La docuementación técnica me pareció clara, gracias a ella pude realizar el punto 1. Tengo un comentario respecto a Kajita, en la documentación explican detalladamente como integrarla pero en el punto 1 de la prueba dice que la tokenización se puede realizar a través de kuskijs o Kajita. Por qué cuando es una suscripción bajo demanda desde kajita no se genera el token pero cuando es una suscripción calendarizada si? este comportamiento está ok?  adjunto evidencia https://codepen.io/danicruzR/pen/ZEMbZKz 
@@ -16,10 +16,15 @@ Se recomienda tokenizar por medio de una solución frontend para recolectar info
 
 • Definir que es Autorización, Captura, Reversión, Anulación, Charge. 
 R//
+
 Autorización: es cuando se le toma cierto valor al TH en su TC para verificar que el cliente cuenta con suficiente crédito antes de procesar la venta.
+
 Captura: En la captura se hace el cobro efectivo de la autorización y se le hace el débito al TH en su cuenta.
+
 Reversión: Cuando se excede el tiempo de la anulación del cargo se procede con la reversión. Es un proceso Semi-automatio y en algunos casos se pueden realizar reembolsos parciales.
+
 Anulación: Es la anulación de un cargo o un cargo diferido existoso. El TH tiene casi 72 hrs para realizar la anulación.
+
 Cargo: Es cuando se le debita un monto al TH de su cuenta.
 
 • Que entiendes y con qué fin se pueden utilizar llaves de idempotencia. 
